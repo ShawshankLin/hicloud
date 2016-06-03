@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* extbkbox */
+.extbkbox{width:600px;background:#FFFFFF;position:fixed !Important;bottom:0;float:left;position:absolute;z-index:1000;}
+*html .extbkbox{top:expression(offsetParent.scrollTop+20);}
+.extbkbox{right:0px;}
+.extbkboxm{clear:both;height:30px;font-size:14px;color:#FFFFFF;font-weight:bold;line-height:30px;background:#202020;}
+.extbkboxm .extmore{float:right;cursor:pointer;}
+.extbkboxb{font-size:12px;clear:both;height:auto;}
+.extbkboxnar{color:#f00;display:block;width:40px;height:30px;background:url(../images/tanchu_05.gif) no-repeat center center;}
+.extbkboxnarove{color:#00f;width:40px;height:30px;background:url(../images/tanchu_03.gif) no-repeat center center;display:block;}
+.extbkboxb ul{list-style:none;margin:0px;padding:0px;}
+.extbkboxb ul li{width:255px;height:25px;line-height:25px;font-family:"宋体";font-family:12px;color:#333333;padding-left:25px;background:url(../images/tanchu_10.gif) no-repeat 10px center;}
+.extbkboxb ul li a{color:#333333;text-decoration:none;}
+.extbkboxb ul li a:hover{color:#990000;text-decoration:underline;}

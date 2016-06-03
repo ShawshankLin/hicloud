@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo: play HLS video</title>
+</head>
+<body>
+    <div id="playercontainer"></div>
+    <script type="text/javascript" src="../player/cyberplayer.js"></script>
+    <script type="text/javascript">
+        var player = cyberplayer("playercontainer").setup({
+            width: 854,
+            height: 480,
+            stretching: "uniform",
+            file: "http://demo-video.bj.bcebos.com/AdrenalineRush.m3u8",
+            autostart: true,
+            repeat: false,
+            volume: 100,
+            controls: true,
+            ak: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' // 公有云平台注册即可获得accessKey
+        });
+    </script>
+</body>
+</html>

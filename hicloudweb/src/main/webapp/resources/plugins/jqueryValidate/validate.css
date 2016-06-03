@@ -1,0 +1,8 @@
+check { width: 10em; float: left; }
+check.error { 
+	float: none; 
+	color: red; 
+	padding-left: 20px;
+	background:url("../images/unchecked.gif") no-repeat 0px 0px;
+	
+	}

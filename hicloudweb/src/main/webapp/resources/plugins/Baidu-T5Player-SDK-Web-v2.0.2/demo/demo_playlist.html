@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo: playlist & thumbnail && multiRate</title>
+</head>
+<body>
+    <div id="playercontainer"></div>
+    <script type="text/javascript" src="../player/cyberplayer.js"></script>
+    <script type="text/javascript">
+        var player = cyberplayer("playercontainer").setup({
+            width: 854,
+            height: 480,
+            stretching: "uniform",
+            autostart: true,
+            repeat: false,
+            volume: 100,
+            controls: true,
+            playlist: [
+                {
+                    image:'http://content.bitsontherun.com/thumbs/3XnJSIm4-480.jpg',
+                    sources: [
+                        {file: '//content.bitsontherun.com/videos/3XnJSIm4-52qL9xLP.mp4'}
+                    ],
+                    tracks: [
+                        { file: 'assets/thumbs.vtt', kind: 'thumbnails' },
+                        {file: '//playertest.longtailvideo.com/chapters/sintel-chapters.vtt', kind: 'chapters'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-ch.srt', label: 'Chinese'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-fa.srt', label: 'Farsi'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-gr.srt', label: 'Greek'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-jp.srt', label: 'Japanese'}
+                    ],
+                    description : 'Scales!',
+                    title: 'Sintel is such a good movie, sometimes I wonder why it wasnt a feature film'
+                },
+                {
+                    image: "http://content.bitsontherun.com/thumbs/bkaovAYt-480.jpg",
+                    sources: [
+                        {file: '//content.bitsontherun.com/videos/bkaovAYt-52qL9xLP.mp4'},
+                        {file: '//content.bitsontherun.com/videos/bkaovAYt-27m5HpIu.webm'}
+                    ],
+                    tracks: [
+                        {file: '//playertest.longtailvideo.com/chapters/bunny-chapters.vtt', kind: 'chapters'},
+                        {file: '//playertest.longtailvideo.com/captions/bunny-en.srt', label: 'English'},
+                        {file: '//playertest.longtailvideo.com/captions/bunny-ned.txt', label: 'Dutch'}
+                    ],
+                    title: 'Big Buck Bunny'
+                },
+                {
+                    sources: [
+                        {
+                            file: 'http://content.bitsontherun.com/videos/3XnJSIm4-injeKYZS.mp4',
+                            height: 180,
+                            width: 320,
+                            label: '180p'
+                        }, {
+                            file: 'http://content.bitsontherun.com/videos/3XnJSIm4-kNspJqnJ.mp4',
+                            height: 360,
+                            width: 640,
+                            label: '360p'
+                        }, {
+                            file: 'http://content.bitsontherun.com/videos/3XnJSIm4-DZ7jSYgM.mp4',
+                            height: 720,
+                            width: 1280,
+                            label: '720p'
+                        }, {
+                            file: 'http://content.bitsontherun.com/videos/3XnJSIm4-el5vTWpr.mp4',
+                            height: 1080,
+                            width: 1920,
+                            label: '1080p'
+                        }
+                    ],
+                    tracks: [
+                        { file: "assets/thumbs.vtt", kind: "thumbnails" },
+                        {file: '//playertest.longtailvideo.com/chapters/sintel-chapters.vtt', kind: 'chapters'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-ch.srt', label: 'Chinese'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-fa.srt', label: 'Farsi'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-gr.srt', label: 'Greek'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-jp.srt', label: 'Japanese'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-ko.srt', label: 'Korean'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-pl.srt', label: 'Polish'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-ru.srt', label: 'Russian'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-sp.srt', label: 'Spanish'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-tr.srt', label: 'Turkish'}
+                    ],
+                    title: "4 quality levels"
+                },
+                {
+                    sources: [
+                        {
+                            file: 'http://content.bitsontherun.com/videos/3XnJSIm4-injeKYZS.mp4',
+                            height: 180,
+                            width: 320
+                        },{
+                            file: 'http://content.bitsontherun.com/videos/3XnJSIm4-kNspJqnJ.mp4',
+                            height: 360,
+                            width: 640
+                        }
+                    ],
+                    tracks: [
+                        { file: "assets/thumbs.vtt", kind: "thumbnails" },
+                        {file: '//playertest.longtailvideo.com/chapters/sintel-chapters.vtt', kind: 'chapters'},
+                        {file: '//playertest.longtailvideo.com/captions/sintel-ch.srt', label: 'Chinese'}
+                    ],
+                    title: "2 quality toggle"
+                }
+            ],
+            ak: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' // 公有云平台注册即可获得accessKey
+        });
+    </script>
+</body>
+</html>

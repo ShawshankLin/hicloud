@@ -1,0 +1,97 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: 'Open Sans';
+  font-size: 100%;
+  font-weight: 300;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+h1 {
+  color: #666666;
+  font-size: 2rem;
+  line-height: 1.5em;
+  margin: 2em 0 2em 0;
+}
+
+.box {
+  margin: 1rem;
+  width: 18.75rem;
+}
+.box img {
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  color: white;
+  overflow: hidden;
+  margin: 1rem;
+  padding: 0;
+  text-transform: uppercase;
+  width: 150px;
+  height: 40px;
+}
+.btn.color-1 {
+  background-color: #426fc5;
+}
+.btn.color-2 {
+  background-color: #00897b;
+}
+.btn.color-3 {
+  background-color: #f6774f;
+}
+.btn.color-4 {
+  background-color: #e94043;
+}
+
+.btn-border.color-1 {
+  background-color: transparent;
+  border: 2px solid #426fc5;
+  color: #426fc5;
+}
+.btn-border.color-2 {
+  background-color: transparent;
+  border: 2px solid #00897b;
+  color: #00897b;
+}
+.btn-border.color-3 {
+  background-color: transparent;
+  border: 2px solid #f6774f;
+  color: #f6774f;
+}
+.btn-border.color-4 {
+  background-color: transparent;
+  border: 2px solid #e94043;
+  color: #e94043;
+}
+
+.btn-round {
+  border-radius: 10em;
+}
+
+.material-design {
+  position: relative;
+}
+.material-design canvas {
+  opacity: 0.25;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  align-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 46rem;
+}

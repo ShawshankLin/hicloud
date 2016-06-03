@@ -1,0 +1,9 @@
+.msg{
+	text-align:center;
+	width:300px;
+	height:45px;
+	left:50%;
+	margin-left:-150px;
+	z-index:99;
+	position:absolute;
+}

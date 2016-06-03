@@ -1,0 +1,12 @@
+.grid{width:100%;height:520px;overflow-y:auto;}
+.grid ul{padding:0;list-style:none;}
+.grid ul li{overflow:hidden;width:114px;height:130px;float:left;margin-bottom:5px;margin-left:15px;border:1px solid #fff;position:relative;transition:all 0.2s ease-in 0.1s;padding-top:10px;}
+.grid ul li .img{
+	width:80px;
+	height:80px;
+	margin:0 auto;
+}
+.grid span.filename{position:absolute;border-radius:0px;left:-25px;bottom:10px;margin-bottom:5px;overflow:hidden;width:100%;height:20px;color:#595c5f;line-height:20px;text-align:center;font-size:14px;z-index:0;border:none;}	
+.grid span.filename:hover{background:none;color:#3083eb;}	
+.grid span{width:100%;height:20px;line-height:20px;text-align:center;background:none;border:1px solid #CCC;border-radius:8px;transition:all 0.2s ease-in 0.1s;margin-left:25px;}
+.seled{border:1px solid #bcccde !important;background-color:#eff3f9;border-radius:2px;}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	  <context-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>classpath:spring/admin-core-context.xml</param-value>
+	  </context-param>
+	  <context-param>
+	    <param-name>log4jConfigLocation</param-name>
+	    <param-value>classpath:log4j.properties</param-value>
+	  </context-param>
+	  <filter>
+	    <filter-name>encodingFilter</filter-name>
+	    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	    <init-param>
+	      <param-name>encoding</param-name>
+	      <param-value>utf-8</param-value>
+	    </init-param>
+	  </filter>
+	  <filter-mapping>
+	    <filter-name>encodingFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	  </filter-mapping>
+	  
+  	<!-- 连接池 启用Web监控统计功能   start-->
+	<filter>
+		<filter-name>DruidWebStatFilter</filter-name>
+		<filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
+		<init-param>
+			<param-name>exclusions</param-name>
+			<param-value>*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>DruidWebStatFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>DruidStatView</servlet-name>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DruidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>
+	<!-- 连接池 启用Web监控统计功能   end-->
+	
+	  <listener>
+	    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	  </listener>
+	  <listener>
+	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	  </listener>
+	  <servlet>
+	    <servlet-name>springMvc</servlet-name>
+	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	    <init-param>
+	      <param-name>contextConfigLocation</param-name>
+	      <param-value>classpath:spring/admin-mvc-context.xml</param-value>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>springMvc</servlet-name>
+	    <url-pattern>/</url-pattern>
+	  </servlet-mapping>
+	  <filter>
+	    <filter-name>shiroFilter</filter-name>
+	    <filter-class>
+				org.springframework.web.filter.DelegatingFilterProxy
+			</filter-class>
+	    <init-param>
+	      <param-name>targetFilterLifecycle</param-name>
+	      <param-value>true</param-value>
+	    </init-param>
+	  </filter>
+	  <filter-mapping>
+	    <filter-name>shiroFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	  </filter-mapping>
+	  
+	  <!-- 
+		session view filter config
+		当hibernate+spring配合使用的时候，如果设置了lazy=true,那么在读取数据的时候，当读取了父数据后，  
+		hibernate会自动关闭session，这样，当要使用子数据的时候，系统会抛出lazyinit的错误，  
+		这时就需要使用spring提供的 OpenSessionInViewFilter,OpenSessionInViewFilter主要是保持Session状态
+		知道request将全部页面发送到客户端，这样就可以解决延迟加载带来的问题 
+	-->
+	<filter>
+		<filter-name>openSessionInViewFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>openSessionInViewFilter</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+	  
+	  <error-page>
+	    <error-code>404</error-code>
+	    <location>/404.jsp</location>
+	  </error-page>
+	  <session-config>
+	    <session-timeout>30</session-timeout>
+	  </session-config>
+	  <welcome-file-list>
+	    <welcome-file>login</welcome-file>
+	  </welcome-file-list>
+</web-app>
