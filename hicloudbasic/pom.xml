@@ -20,7 +20,7 @@
 		<hibernate.version>4.3.11.Final</hibernate.version>
 		<hibernate-validator.version>5.2.2.Final</hibernate-validator.version>
 		<xml-apis.version>1.4.01</xml-apis.version>
-		<hadoop.version>2.6.0</hadoop.version>
+		<hadoop.version>2.7.0</hadoop.version>
 		<sqoop.version>1.99.4</sqoop.version>
 	</properties>
 
